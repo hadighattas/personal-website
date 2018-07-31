@@ -1,0 +1,12 @@
+.Img {
+  margin: 20px;
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 80px;
+  border-style: solid;
+  border-color: #346cc6;
+  border-width: 3px;
+}
