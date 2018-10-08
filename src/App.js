@@ -2,43 +2,76 @@ import React, { Component } from 'react';
 
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
-import Main from './components/views/Main';
+import { instanceOf } from 'prop-types';
+
+import { withCookies, Cookies } from 'react-cookie';
+
+import Main from './views/Main';
 
 import './App.css';
 
 class App extends Component {
+
+  static propTypes = {
+    cookies: instanceOf(Cookies).isRequired
+  };
+
   constructor(props) {
     super(props);
+
+    var themeType = 'false' !== this.props.cookies.get('themeType');
+
     this.state = {
-      enableDark: false
+      theme: createMuiTheme({
+        type: themeType ? 'light' : 'dark',
+        palette: {
+          primary: {
+            main: themeType ? '#eeeeee' : '#111111',
+            contrastText: themeType ? '#000000' : '#eeeeee'
+          },
+          secondary: {
+            main: '#346CC6'
+          },
+        },
+        typography: {
+          fontFamily: 'Lato'
+        }
+      }),
+      themeType: themeType
     };
-    this.theme = createMuiTheme({
-      type: 'light',
-      palette: {
-        primary: { main: '#eeeeee' },
-        secondary: { main: '#346CC6' }
-      },
-      typography: {
-        fontFamily: 'Lato'
-      }
-    });
   }
 
-  enableDarkChnaged() {
+  setTheme(themeType) {
     this.setState({
-      enableDark: true
+      theme: createMuiTheme({
+        type: themeType ? 'light' : 'dark',
+        palette: {
+          primary: {
+            main: themeType ? '#eeeeee' : '#111111'
+          },
+          secondary: {
+            main: '#346CC6'
+          },
+        },
+        typography: {
+          fontFamily: 'Lato'
+        }
+      }),
+      themeType
     });
+
+    this.props.cookies.set('themeType', themeType, { path: '/' });
   }
 
   render() {
     return (
-      <MuiThemeProvider theme={this.theme}>
-        <div className="App">
-          <Main changeTheme={() => this.changeTheme()} />
+      <MuiThemeProvider theme={this.state.theme}>
+        <div className="App" style={{ height: '100%' }}>
+          <Main themeType={this.state.themeType} changeTheme={(themeType) => this.setTheme(themeType)} />
         </div>
       </MuiThemeProvider>
     );
   }
 }
 
-export default App;
+export default withCookies(App);
