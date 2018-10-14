@@ -2,26 +2,20 @@ import React, { Component } from 'react';
 
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
-import { instanceOf } from 'prop-types';
-
-import { withCookies, Cookies } from 'react-cookie';
-
 import Main from './views/Main';
 
-import './App.css';
-
 class App extends Component {
-
-  static propTypes = {
-    cookies: instanceOf(Cookies).isRequired
-  };
 
   constructor(props) {
     super(props);
 
-    var themeType = 'false' !== this.props.cookies.get('themeType');
+    var themeType = 'false' !== localStorage.getItem('themeType');
 
-    this.state = {
+    this.state = this.themeLoader(themeType);
+  }
+
+  themeLoader(themeType) {
+    return {
       theme: createMuiTheme({
         type: themeType ? 'light' : 'dark',
         palette: {
@@ -37,36 +31,19 @@ class App extends Component {
           fontFamily: 'Lato'
         }
       }),
-      themeType: themeType
+      themeType
     };
   }
 
   setTheme(themeType) {
-    this.setState({
-      theme: createMuiTheme({
-        type: themeType ? 'light' : 'dark',
-        palette: {
-          primary: {
-            main: themeType ? '#eeeeee' : '#111111'
-          },
-          secondary: {
-            main: '#346CC6'
-          },
-        },
-        typography: {
-          fontFamily: 'Lato'
-        }
-      }),
-      themeType
-    });
-
-    this.props.cookies.set('themeType', themeType, { path: '/' });
+    this.setState(this.themeLoader(themeType));
+    localStorage.setItem('themeType', themeType);
   }
 
   render() {
     return (
       <MuiThemeProvider theme={this.state.theme}>
-        <div className="App" style={{ height: '100%' }}>
+        <div className="App">
           <Main themeType={this.state.themeType} changeTheme={(themeType) => this.setTheme(themeType)} />
         </div>
       </MuiThemeProvider>
@@ -74,4 +51,4 @@ class App extends Component {
   }
 }
 
-export default withCookies(App);
+export default App;

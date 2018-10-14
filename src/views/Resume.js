@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Resume.css';
+
 import ExpansionSection from '../components/ExpansionSection';
 
 import data from '../data';
 import Showcase from '../components/Showcase';
+import { Paper } from '@material-ui/core';
+import Typography from '../components/CustomTypography';
 
 class Resume extends Component {
   render() {
@@ -14,55 +17,70 @@ class Resume extends Component {
       <div className="resume">
         <ExpansionSection
           themeType={themeType}
-          title='Education'
+          title="Education"
           values={data.education}
         />
-        <br />
 
         <ExpansionSection
           themeType={themeType}
-          title='Work Experience'
+          title="Work Experience"
           values={data.work}
+          style={{ animationDelay: '0.1s' }}
         />
-
-        <br />
 
         <ExpansionSection
           themeType={themeType}
-          title='Community'
+          title="Community"
           values={data.community}
+          style={{ animationDelay: '0.2s' }}
         />
-
-        <br />
 
         <Showcase
           themeType={themeType}
-          title='Skills'
+          title="Skills"
           values={data.skills}
+          style={{ animationDelay: '0.3s' }}
         />
 
-        <br />
+        <Typography variant='title' themeType={themeType}>Languages</Typography>
 
-        <ExpansionSection
-          themeType={themeType}
-          title='Languages'
-          values={data.languages}
-        />
+        <div className="languages"
+          style={{ animationDelay: '0.4s' }}
+        >
+          {data.languages.map((value, index) => (
+            <Paper
+              key={index}
+              style={{
+                borderBottomLeftRadius: (index === 0) || (index !== data.languages.length - 1) ? '0pt' : '3pt',
+                borderBottomRightRadius: (index === 0) || (index !== data.languages.length - 1) ? '0pt' : '3pt',
+                borderTopLeftRadius: (index !== 0) || (index === data.languages.length - 1) ? '0pt' : '3pt',
+                borderTopRightRadius: (index !== 0) || (index === data.languages.length - 1) ? '0pt' : '3pt',
+                width: '100%',
+                backgroundColor: themeType ? '#dddddd' : '#333333',
+                paddingTop: 15,
+                paddingBottom: 15
+              }}>
+              <div className="language">
+                <Typography style={{ fontWeight: 'bold' }} themeType={themeType}>
+                  {value.heading}
+                </Typography>
+                <Typography themeType={themeType}>
+                  {value.content}
+                </Typography>
+              </div>
 
-        <br />
+            </Paper>
+          ))}
+
+        </div>
+
 
         <Showcase
           themeType={themeType}
-          title='Personal'
+          title="Personal"
           values={data.personal}
+          style={{ animationDelay: '0.5s' }}
         />
-
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
 
       </div >
     );

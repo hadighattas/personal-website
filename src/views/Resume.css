@@ -1,7 +1,39 @@
 .resume {
-  display: block;
+  display: flex;
   flex-direction: column;
   flex: 1;
   align-items: center;
   width: 100%;
+  padding-bottom: 60pt;
+}
+
+.languages{
+  animation: 0.2s ease-out 0s 1 zoominout;
+  width: 80%;
+  max-width: 500pt;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20pt;
+  margin-top: 10pt;
+}
+
+.language {
+  padding-right: 20pt;
+  padding-left: 20pt;  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@keyframes zoominout {
+  0% {
+      transform: scale(1,1);
+  }
+  50% {
+      transform: scale(1.2,1.2);
+  }
+  100% {
+      transform: scale(1,1);
+  }
 }

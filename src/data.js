@@ -27,8 +27,7 @@ export default {
     {
       heading: 'Research Assistant at AUB',
       content: [
-        'French & Lebanese Baccalaureate',
-
+        'Working on analyzing and modeling social media dynamics using graphs and structured probability spaces',
       ],
       date: 'Fall 2018',
       location: 'Beirut, Lebanon'

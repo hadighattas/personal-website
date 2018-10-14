@@ -15,8 +15,8 @@ class Projects extends Component {
           title=''
           values={data.projects}
         />
-        <br />
       </div>
+
     );
   }
 }

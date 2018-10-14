@@ -6,8 +6,6 @@ import { Typography, AppBar, Tabs, Tab, Button } from '@material-ui/core';
 import DarkIcon from '@material-ui/icons/Brightness2';
 import LightIcon from '@material-ui/icons/Brightness7';
 
-// import SwipeableViews from 'react-swipeable-views';
-
 import './Main.css';
 import Resume from './Resume';
 import Projects from './Projects';
@@ -29,13 +27,6 @@ class Main extends Component {
     }
   };
 
-  // handleChangeIndex = index => {
-  //   this.setState({ value: index });
-  //   if (window.pageYOffset > 0) {
-  //     window.scrollTo(0, 0);
-  //   }
-  // };
-
   changeTheme = () => {
     this.props.changeTheme(!this.props.themeType);
   }
@@ -53,6 +44,7 @@ class Main extends Component {
       >
 
         <AppBar position="static" style={{ boxShadow: 'none' }}>
+
           <img className="Img" alt="Profile" src="/images/ProfilePicture.jpg" />
 
           <Typography
@@ -62,13 +54,15 @@ class Main extends Component {
           >
             Hadi Ghattas
           </Typography>
+
         </AppBar>
 
         <AppBar
           position="sticky"
           color="primary"
           style={{
-            boxShadow: themeType ? '0 10px 10px -10px' : 'none'
+            boxShadow: themeType ? '0 10px 10px -10px' : 'none',
+            marginBottom: 30
           }}
         >
           <Tabs
@@ -83,20 +77,18 @@ class Main extends Component {
             <Tab style={styles.tab} label="Contact" />
           </Tabs>
         </AppBar>
-        <br />
-        {/* <SwipeableViews
-          index={this.state.value}
-          onChangeIndex={this.handleChangeIndex}
-          animateHeight
-        > */}
+
         {this.state.value === 0 && <Home themeType={themeType} />}
         {this.state.value === 1 && <Resume themeType={themeType} />}
         {this.state.value === 2 && <Projects themeType={themeType} />}
         {this.state.value === 3 && <Contact themeType={themeType} />}
 
-        {/* </SwipeableViews> */}
-
-        <Button color="secondary" onClick={this.changeTheme} variant="fab" style={{ position: 'fixed', bottom: '1%', right: '1%' }}>
+        <Button
+          color="secondary"
+          onClick={this.changeTheme}
+          variant="fab"
+          style={{ position: 'fixed', bottom: '3%', right: '3%' }}
+        >
           {themeType ? <DarkIcon /> : <LightIcon />}
         </Button>
       </div>
@@ -114,4 +106,5 @@ const styles = {
     textTransform: 'capitalize'
   }
 };
+
 export default Main;

@@ -4,7 +4,7 @@ import { Typography } from '@material-ui/core';
 
 function CustomTypography(props) {
   return (
-    <Typography style={{ color: props.themeType ? 'black' : 'white', ...props.style }} >
+    <Typography {...props} style={{ color: props.themeType ? 'black' : 'white', ...props.style }} >
       {props.children}
     </Typography>
   );

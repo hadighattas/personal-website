@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './CustomExpansionPanel.css';
+
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -12,7 +14,7 @@ function CustomExpansionPanel(props) {
   return (
     <ExpansionPanel {...props} style={{ backgroundColor: themeType ? '#dddddd' : '#333333' }}  >
       <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} >
-        <div style={{ display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="expansionPanelSummary" >
           <div>
             <Typography style={{ fontWeight: 'bold' }} themeType={themeType}>
               {heading}
@@ -23,10 +25,8 @@ function CustomExpansionPanel(props) {
             {date}
           </Typography>
         </div>
-
-
       </ExpansionPanelSummary>
-      <ExpansionPanelDetails style={{ flexDirection: 'column' }}>
+      <ExpansionPanelDetails className="expansionPanelDetails">
         {content.map((value, index) => (
           <div key={index}>
             <Typography themeType={themeType}>
@@ -34,7 +34,6 @@ function CustomExpansionPanel(props) {
             </Typography>
             <br />
           </div>
-
         ))}
 
       </ExpansionPanelDetails>

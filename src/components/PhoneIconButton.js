@@ -9,7 +9,6 @@ function PhoneIconButton(props) {
     <IconButton {...props} disabled={props.href === undefined ? true : false}>
       <PhoneIcon style={{ color: props.themeType ? 'black' : 'white' }} />
     </IconButton>
-
   );
 }
 
