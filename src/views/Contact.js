@@ -18,7 +18,7 @@ class Contact extends Component {
         <div className="contactButtonContainer">
           <Button className="contactButton" variant="contained" color="secondary" href="mailto:hadighattas97@gmail.com">
             <MailIconButton themeType={themeType} />
-            <Typography themeType={themeType}>Personal Mail</Typography>
+            <Typography themeType={themeType}>Personal Email</Typography>
           </Button>
         </div>
 
@@ -28,7 +28,7 @@ class Contact extends Component {
         >
           <Button className="contactButton" variant="contained" color="secondary" href="mailto:hsg05@mail.aub.edu">
             <MailIconButton themeType={themeType} />
-            <Typography themeType={themeType}>AUB Mail</Typography>
+            <Typography themeType={themeType}>AUB Email</Typography>
           </Button>
         </div>
 
