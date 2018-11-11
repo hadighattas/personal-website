@@ -39,7 +39,7 @@ export default {
         'Developed modules to be used throughout all the EMoney Android applications'
       ],
       date: 'Summer 2018',
-      location: 'Beirut, Lebanon'
+      location: 'Virginia, USA'
     },
     {
       heading: 'Intern at Potech Consulting',
@@ -153,15 +153,15 @@ export default {
     {
       heading: 'MedBook',
       content: [
-        'Currently working on a medical records sharing platform that uses GNU Health and Blockchain as underlying techologies.',
-        'This is part of my FYP project'
+        'Currently working on a medical records sharing platform that uses GNU Health and Blockchain as underlying technologies.',
+        'This is part of my FYP project.'
       ],
       date: 'Ongoing'
     },
     {
       heading: 'Social Media Dynamics',
       content: [
-        'I am currently working on analyzing and modeling social media dynamics part of the research at AUB.',
+        'I am currently working on analyzing and modeling social media dynamics as part of my research at AUB.',
         'This is being done in order to build a logistical model using weekly connected graphs and structured probability spaces.'
       ],
       date: 'Ongoing',
@@ -185,7 +185,7 @@ export default {
     {
       heading: 'AUB Course Monitor Bot',
       content: [
-        'Developed a Telegram bot that tracks avalibility of courses for the user and sends a message when a spot is available.'
+        'Developed a Telegram bot that tracks availability of courses for the user and sends a message when a spot is available.'
       ],
       location: 'https://github.com/hadighattas/aub-course-monitor'
     },
