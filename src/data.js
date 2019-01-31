@@ -4,8 +4,8 @@ export default {
       heading: 'American Univesity of Beirut',
       content: [
         'Bachelor in Computer and Communications Engineering',
-        'Cumulative GPA: 85.36',
-        'SFEA Dean\'s Honor List',
+        'Cumulative GPA: 86.77',
+        'MSFEA Dean\'s Honor List',
         'Co-founder of the AUB TechClub'
       ],
       date: '2015-present',
@@ -27,7 +27,8 @@ export default {
     {
       heading: 'Research Assistant at AUB',
       content: [
-        'Working on analyzing and modeling social media dynamics using graphs and structured probability spaces',
+        'Working on identifying the methods of resistance mechanisms in social media',
+        'Contributed to internal UN documents'
       ],
       date: 'Fall 2018',
       location: 'Beirut, Lebanon'
@@ -35,7 +36,7 @@ export default {
     {
       heading: 'Software Engineering Intern at ETS',
       content: [
-        'Developed the new version of EMoney Merchant App',
+        'Developed the new version of EMoney Merchant App using React Native',
         'Developed modules to be used throughout all the EMoney Android applications'
       ],
       date: 'Summer 2018',
@@ -43,12 +44,10 @@ export default {
     },
     {
       heading: 'Intern at Potech Consulting',
-      content: [
-        'Worked on analyzing the vulnerabilities of computer systems'
-      ],
+      content: ['Worked on analyzing the vulnerabilities of computer systems'],
       date: 'Summer 2014',
       location: 'Mkalles, Lebanon'
-    },
+    }
   ],
 
   community: [
@@ -63,12 +62,10 @@ export default {
     },
     {
       heading: 'Member of Comité d\'Activités Sociales',
-      content: [
-        'Tutored underprivileged kids from various backgrounds'
-      ],
+      content: ['Tutored underprivileged kids from various backgrounds'],
       date: '2012-2014',
       location: 'Beirut, Lebanon'
-    },
+    }
   ],
 
   skills: [
@@ -116,7 +113,7 @@ export default {
     },
     {
       label: 'VHDL'
-    },
+    }
   ],
 
   languages: [
@@ -131,7 +128,7 @@ export default {
     {
       heading: 'English',
       content: ['Native or bilingual proficiency']
-    },
+    }
   ],
 
   personal: [
@@ -153,24 +150,15 @@ export default {
     {
       heading: 'MedBook',
       content: [
-        'Currently working on a medical records sharing platform that uses GNU Health and Blockchain as underlying technologies.',
+        'Working on developing a platform for users seeking different services in the healthcare sector in Lebanon using React Native and Node.js',
         'This is part of my FYP project.'
       ],
-      date: 'Ongoing'
+      date: 'Ongoing',
+      location: 'https://github.com/hadighattas/medbook'
     },
     {
       heading: 'Social Media Dynamics',
-      content: [
-        'I am currently working on analyzing and modeling social media dynamics as part of my research at AUB.',
-        'This is being done in order to build a logistical model using weekly connected graphs and structured probability spaces.'
-      ],
-      date: 'Ongoing',
-    },
-    {
-      heading: 'AUB Counsulting Club App',
-      content: [
-        'Currently working with the AUB Counsulting Club on a new mobile application.'
-      ],
+      content: ['Working on analyzing and modeling social media dynamics'],
       date: 'Ongoing'
     },
     {
@@ -219,6 +207,6 @@ export default {
       ],
       date: 'Spring 2016',
       location: 'https://github.com/hadighattas/maze-solver-pic'
-    },
+    }
   ]
 };
